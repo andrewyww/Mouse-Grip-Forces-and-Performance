@@ -1,6 +1,7 @@
 ---
 title: "Mouse Grip Forces & Performance"
-output: html_notebook
+author: Andrew Y.W. Wong
+output: github_document
 ---
 
 # Project Overview
@@ -50,12 +51,3 @@ The calibration step involved using a set of calibration masses to determine the
 Sensors were attached to a modified Logitech G703 mouse on the left side, left click, right click, right side, and body. The mouse was held using three grips (fingertip, claw, and palm) while performing Fitts point and click tasks across a range of difficulties. Data from the force sensors was collected with a sampling rate of 100 Hz.
 
 Plots were created by overlaying an image of the mouse with a shapefile, effectively making a heat map of the forces exerted on the different sections of the mouse. 
-
-```{r setup}
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
-```
-
