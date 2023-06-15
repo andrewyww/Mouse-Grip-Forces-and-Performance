@@ -32,7 +32,7 @@ There are three mouse grip styles that people are most familiar with:
 Here’s a visualization for a better picture of what these grips look
 like (source: [Electronics
 Hub](https://www.electronicshub.org/mouse-grip-styles/)):
-![test](./images/Mouse-Grip-Styles-Featured-Image.png)
+![](./images/Mouse-Grip-Styles-Featured-Image.png)
 
 ------------------------------------------------------------------------
 
@@ -54,6 +54,8 @@ research question:
 
 ## 1) Connecting force sensors to Arduino
 
+![](./images/hookup.jpg)
+
 ## 2) Calibration
 
 The calibration step involved using a set of calibration masses to
@@ -67,6 +69,8 @@ was taken as the analog measurement for a given mass. Linear
 interpolation was used to approximate mass when analog measurements fell
 between calibration values. Collected values were then converted to
 force, the main biomechanical outcome of interest.
+
+![](./images/calibration.jpg)
 
 ## 3) Measuring forces
 
