@@ -22,7 +22,7 @@ There are three mouse grip styles that people are most familiar with:
 * Palm grip: Rest **fingers and palm** on mouse
 
 Here's a visualization for a better picture of what these grips look like (source: [Electronics Hub](https://www.electronicshub.org/mouse-grip-styles/)):
-![test](./images/Mouse-Grip-Styles-Featured-Image.png)
+![](./images/Mouse-Grip-Styles-Featured-Image.png)
 
 ***
 
@@ -42,10 +42,12 @@ I carried out the following steps in the process of answering the research quest
 3) Attached the sensors to the mouse and measured forces
 
 ## 1) Connecting force sensors to Arduino
-
+![](./images/hookup.jpg)
 
 ## 2) Calibration
 The calibration step involved using a set of calibration masses to determine the analog value associated with a given mass. Analog values ranged from 0-1023 because the Arduino that was used possesses an analog to digital converter with a 10-bit resolution (2^10 = 1024). Due to the small physical dimensions of the sensors, only a limited number of calibration masses could be placed at once. A measurement was taken every 2 seconds over a 10 second window, so the average of 5 data points was taken as the analog measurement for a given mass. Linear interpolation was used to approximate mass when analog measurements fell between calibration values. Collected values were then converted to force, the main biomechanical outcome of interest. 
+
+![](./images/calibration.jpg)
 
 ## 3) Measuring forces
 Sensors were attached to a modified Logitech G703 mouse on the left side, left click, right click, right side, and body. The mouse was held using three grips (fingertip, claw, and palm) while performing Fitts point and click tasks across a range of difficulties. Data from the force sensors was collected with a sampling rate of 100 Hz.
