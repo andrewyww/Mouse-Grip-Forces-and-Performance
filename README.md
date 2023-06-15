@@ -32,7 +32,7 @@ There are three mouse grip styles that people are most familiar with:
 Here’s a visualization for a better picture of what these grips look
 like (source: [Electronics
 Hub](https://www.electronicshub.org/mouse-grip-styles/)):
-![](./images/Mouse-Grip-Styles-Featured-Image.png)
+![test](./images/Mouse-Grip-Styles-Featured-Image.png)
 
 ------------------------------------------------------------------------
 
