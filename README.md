@@ -30,22 +30,21 @@ There are three mouse grip styles that people are most familiar with:
 - Palm grip: Rest **fingers and palm** on mouse
 
 Here’s a visualization for a better picture of what these grips look
-like (source: [Electronics
-Hub](https://www.electronicshub.org/mouse-grip-styles/)):
-![](./images/Mouse-Grip-Styles-Featured-Image.png)
+like: ![](./images/Mouse-Grip-Styles-Featured-Image.png)  
+Source: [Electronics
+Hub](https://www.electronicshub.org/mouse-grip-styles/)
 
 ------------------------------------------------------------------------
 
 # Summary
 
-Across the board, the *palm* grip seems to offer the lowest forces.
-Meanwhile, the *fingertip* and *claw* grips are similar in having higher
-forces on the left and right sides of the mouse. The *claw* grip exerts
-greater force on the mouse body compared to the *fingertip*, which
-should be expected given the lack of support of the fingertip grip on
-the back of the mouse. Surprisingly, the *claw* grip exerts higher side
-forces on the mouse, despite the additional palm support (and associated
-force) on the mouse body.
+Across the board, the *palm* grip appears to exert the lowest forces.
+While the *fingertip* and *claw* grips are similar, the *claw* grip
+exerts greater force on the mouse body compared to the *fingertip*,
+which should be expected given the lack of support of the fingertip grip
+on the back of the mouse. Surprisingly, the *claw* grip exerts higher
+side forces on the mouse, despite the additional palm support (and
+associated force) on the mouse body.
 
 These findings are most pronounced in the maximum forces, but hold true
 for the median forces as well.
