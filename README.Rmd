@@ -10,7 +10,9 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE
 )
+
 library(tidyverse)
+library(knitr)
 ```
 
 # Project Overview
@@ -66,20 +68,20 @@ forces_tbl <- forces %>%
 
 Here are the median forces:
 ```{r forces_median_table}
-forces_med_tbl <- forces_tbl %>%
+forces_tbl %>%
   select(-max) %>%
   mutate(median = round(median, digits = 2)) %>%
-  spread(key = section, value = median)
-knitr::kable(forces_med_tbl)
+  spread(key = section, value = median) %>%
+  kable()
 ```
 
 Here are the maximum forces:
 ```{r}
-forces_max_tbl <- forces_tbl %>%
+forces_tbl %>%
   select(-median) %>%
   mutate(max = round(max, digits = 2)) %>%
-  spread(key = section, value = max)
-knitr::kable(forces_max_tbl)
+  spread(key = section, value = max) %>%
+  kable()
 ```
 
 
@@ -87,14 +89,14 @@ knitr::kable(forces_max_tbl)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 fitts <- read.csv("fitts.csv")
-table <- fitts %>%
+fitts %>%
   group_by(Condition) %>%
   summarise(throughput = round(mean(TP.bps.), digits = 2)) %>%
   mutate(grip = case_when(Condition == "C01" ~ "fingertip",
                           Condition == "C02" ~ "claw",
                           Condition == "C03" ~ "palm")) %>%
-  select(grip, throughput)
-knitr::kable(table)
+  select(grip, throughput) %>%
+  kable()
 
 # ggplot(data = fitts %>%
 #   group_by(Condition, A, W) %>%
