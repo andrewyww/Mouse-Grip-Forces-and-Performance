@@ -4,6 +4,15 @@ author: Andrew Y.W. Wong
 output: github_document
 ---
 
+```{r setup, message=FALSE, warning=FALSE, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+```
+
 # Project Overview
 
 I was interested in exploring the force and performance implications of using a computer mouse with different gripping styles. For a passionate subset of the PC gaming community, mouse grip is a topic of interest that is deliberated on. In the ergonomics world, tool design and use is an area of research with the ability to improve comfort and reduce musculoskeletal disorders. Despite the existence of ergonomics studies on computer mouse usage, the effects of different mouse gripping styles on biomechanics and performance have yet to be explored.
@@ -29,12 +38,73 @@ Source: [Electronics Hub](https://www.electronicshub.org/mouse-grip-styles/)
 
 # Summary
 
-Across the board, the *palm* grip appears to exert the lowest forces. While the *fingertip* and *claw* grips are similar, the *claw* grip exerts greater force on the mouse body compared to the *fingertip*, which should be expected given the lack of support of the fingertip grip on the back of the mouse. Perhaps surprisingly, the *claw* grip exerts higher side forces on the mouse, despite the additional palm support (and associated force) on the mouse body.
+## Forces
+Across the board, the *palm* grip appears to exert the lowest forces. While the *fingertip* and *claw* grips are similar, the *claw* grip exerts greater force on the mouse body compared to the *fingertip*, which should be expected given the fingertip grip's lack of support on the back of the mouse. Perhaps surprisingly, the *claw* grip exerts higher side forces on the mouse, despite the additional palm support (and associated force) on the mouse body.
 
-These findings are most pronounced in the maximum forces, but hold true for the median forces as well.
+These findings are most pronounced in the maximum forces, but hold true for the median forces (representing their typical force exertion) as well.
 
 ![](./plots/all_mean_low.png)
 Average force measurements from the maximum and median values per trial.
+
+```{r create_forces_table, message=FALSE, warning=FALSE, include=FALSE}
+forces <- read.csv("forces.csv") %>%
+  mutate(across(participant:trial, factor),
+         grip = relevel(grip, "fingertip", "claw", "palm")) %>%
+  select(participant:F5) %>%
+  rename(lside = F1, lclick = F2, rclick = F3, rside = F4, body = F5) %>%
+  pivot_longer(cols = lside:body, names_to = "section", values_to = "force")
+
+forces_tbl <- forces %>% 
+  group_by(grip, trial, section) %>%
+  summarise(median = median(force),
+            max = max(force)) %>%
+  group_by(grip, section) %>%
+  summarise(median = mean(median),
+            max = mean(max))
+
+```
+
+Here are the median forces:
+```{r forces_median_table}
+forces_med_tbl <- forces_tbl %>%
+  select(-max) %>%
+  mutate(median = round(median, digits = 2)) %>%
+  spread(key = section, value = median)
+knitr::kable(forces_med_tbl)
+```
+
+Here are the maximum forces:
+```{r}
+forces_max_tbl <- forces_tbl %>%
+  select(-median) %>%
+  mutate(max = round(max, digits = 2)) %>%
+  spread(key = section, value = max)
+knitr::kable(forces_max_tbl)
+```
+
+
+## Performance
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+fitts <- read.csv("fitts.csv")
+table <- fitts %>%
+  group_by(Condition) %>%
+  summarise(throughput = round(mean(TP.bps.), digits = 2)) %>%
+  mutate(grip = case_when(Condition == "C01" ~ "fingertip",
+                          Condition == "C02" ~ "claw",
+                          Condition == "C03" ~ "palm")) %>%
+  select(grip, throughput)
+knitr::kable(table)
+
+# ggplot(data = fitts %>%
+#   group_by(Condition, A, W) %>%
+#   summarise(IDe = IDe.bits.,
+#             TP = mean(TP.bps.)),
+#   aes(x = IDe, y = TP, colour = Condition)) +
+#   geom_point() +
+#   geom_smooth(se = FALSE)
+```
+
 
 
 ***

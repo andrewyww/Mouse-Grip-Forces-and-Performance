@@ -38,19 +38,46 @@ Hub](https://www.electronicshub.org/mouse-grip-styles/)
 
 # Summary
 
+## Forces
+
 Across the board, the *palm* grip appears to exert the lowest forces.
 While the *fingertip* and *claw* grips are similar, the *claw* grip
 exerts greater force on the mouse body compared to the *fingertip*,
-which should be expected given the lack of support of the fingertip grip
-on the back of the mouse. Surprisingly, the *claw* grip exerts higher
-side forces on the mouse, despite the additional palm support (and
-associated force) on the mouse body.
+which should be expected given the fingertip grip’s lack of support on
+the back of the mouse. Perhaps surprisingly, the *claw* grip exerts
+higher side forces on the mouse, despite the additional palm support
+(and associated force) on the mouse body.
 
 These findings are most pronounced in the maximum forces, but hold true
-for the median forces as well.
+for the median forces (representing their typical force exertion) as
+well.
 
-![](./plots/all_mean_low.png) Averaged force measurements from the max
-and median values per trial
+![](./plots/all_mean_low.png) Average force measurements from the
+maximum and median values per trial.
+
+Here are the median forces:
+
+| grip      | body | lclick | lside | rclick | rside |
+|:----------|-----:|-------:|------:|-------:|------:|
+| fingertip | 0.00 |   0.35 |  0.59 |   0.45 |  1.23 |
+| claw      | 0.28 |   0.41 |  1.08 |   0.46 |  2.00 |
+| palm      | 0.51 |   0.43 |  0.60 |   0.32 |  0.60 |
+
+Here are the maximum forces:
+
+| grip      | body | lclick | lside | rclick | rside |
+|:----------|-----:|-------:|------:|-------:|------:|
+| fingertip | 0.00 |   0.88 |  1.23 |   0.60 |  1.77 |
+| claw      | 0.58 |   0.94 |  1.88 |   0.66 |  2.72 |
+| palm      | 0.68 |   0.94 |  1.53 |   0.43 |  1.05 |
+
+## Performance
+
+| grip      | throughput |
+|:----------|-----------:|
+| fingertip |       5.94 |
+| claw      |       6.28 |
+| palm      |       6.14 |
 
 ------------------------------------------------------------------------
 
@@ -91,6 +118,7 @@ using three grips (fingertip, claw, and palm) while performing Fitts
 point and click tasks across a range of difficulties. Data from the
 force sensors was collected with a sampling rate of 100 Hz.
 
-Plots were created by overlaying an image of the mouse with a shapefile,
-effectively making a heat map of the forces exerted on the different
-sections of the mouse.
+Plots were made by overlaying an image of the mouse with a shapefile,
+effectively creating a heat map of the forces exerted on the different
+sections of the mouse. Details will be provided in the mouse_shapefile
+folder.
