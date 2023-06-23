@@ -66,7 +66,7 @@ forces_tbl <- forces %>%
 
 ```
 
-Here are the median forces:
+Here are the median forces (N):
 ```{r forces_median_table}
 forces_tbl %>%
   select(-max) %>%
@@ -75,8 +75,8 @@ forces_tbl %>%
   kable()
 ```
 
-Here are the maximum forces:
-```{r}
+Here are the maximum forces (N):
+```{r forces_max_tbl}
 forces_tbl %>%
   select(-median) %>%
   mutate(max = round(max, digits = 2)) %>%
@@ -86,8 +86,18 @@ forces_tbl %>%
 
 
 ## Performance
+How do the mouse grips impact performance?
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+While there are differences, they are perhaps smaller than one might think.  
+Ranked from best to worst:
+
+1. Claw
+2. Palm
+3. Fingertip
+
+Here's a table with the associated **throughput (bits/s)**:
+
+```{r performance_table}
 fitts <- read.csv("fitts.csv")
 fitts %>%
   group_by(Condition) %>%
@@ -97,17 +107,8 @@ fitts %>%
                           Condition == "C03" ~ "palm")) %>%
   select(grip, throughput) %>%
   kable()
-
-# ggplot(data = fitts %>%
-#   group_by(Condition, A, W) %>%
-#   summarise(IDe = IDe.bits.,
-#             TP = mean(TP.bps.)),
-#   aes(x = IDe, y = TP, colour = Condition)) +
-#   geom_point() +
-#   geom_smooth(se = FALSE)
 ```
-
-
+These values were obtained by performing 2-Dimensional Fitt's tasks with combinations of different target widths and distances. Throughput essentially assesses the speed-accuracy trade-off in human movement, and is a go-to method for measuring input device performance. 
 
 ***
 

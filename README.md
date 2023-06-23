@@ -55,7 +55,7 @@ well.
 ![](./plots/all_mean_low.png) Average force measurements from the
 maximum and median values per trial.
 
-Here are the median forces:
+Here are the median forces (N):
 
 | grip      | body | lclick | lside | rclick | rside |
 |:----------|-----:|-------:|------:|-------:|------:|
@@ -63,7 +63,7 @@ Here are the median forces:
 | claw      | 0.28 |   0.41 |  1.08 |   0.46 |  2.00 |
 | palm      | 0.51 |   0.43 |  0.60 |   0.32 |  0.60 |
 
-Here are the maximum forces:
+Here are the maximum forces (N):
 
 | grip      | body | lclick | lside | rclick | rside |
 |:----------|-----:|-------:|------:|-------:|------:|
@@ -73,11 +73,28 @@ Here are the maximum forces:
 
 ## Performance
 
+How do the mouse grips impact performance?
+
+While there are differences, they are perhaps smaller than one might
+think.  
+Ranked from best to worst:
+
+1.  Claw
+2.  Palm
+3.  Fingertip
+
+Here’s a table with the associated **throughput (bits/s)**:
+
 | grip      | throughput |
 |:----------|-----------:|
 | fingertip |       5.94 |
 | claw      |       6.28 |
 | palm      |       6.14 |
+
+These values were obtained by performing 2-Dimensional Fitt’s tasks with
+combinations of different target widths and distances. Throughput
+essentially assesses the speed-accuracy trade-off in human movement, and
+is a go-to method for measuring input device performance.
 
 ------------------------------------------------------------------------
 
