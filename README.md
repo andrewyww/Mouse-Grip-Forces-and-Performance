@@ -2,6 +2,10 @@ Mouse Grip Forces & Performance
 ================
 Andrew Y.W. Wong
 
+**Have you ever thought about the way you hold your mouse?**  
+How about the forces needed to move your mouse, and how holding it
+differently affects how well you work your way around a computer?
+
 # Project Overview
 
 I was interested in exploring the force and performance implications of
@@ -23,11 +27,11 @@ Let’s find out!
 Essentially, it’s how people hold and support their mouse.  
 There are three mouse grip styles that people are most familiar with:
 
-- Fingertip grip: Hold mouse with **fingertips**, no contact with back
-  of mouse
-- Claw grip: Hold mouse with **fingertips**, support back of mouse
+- **Fingertip** grip: Hold mouse with **fingertips**, no contact with
+  back of mouse
+- **Claw** grip: Hold mouse with **fingertips**, support back of mouse
   **with palm**
-- Palm grip: Rest **fingers and palm** on mouse
+- **Palm** grip: Rest **fingers and palm** on mouse
 
 Here’s a visualization for a better picture of what these grips look
 like: ![](./images/Mouse-Grip-Styles-Featured-Image.png)  
@@ -40,22 +44,26 @@ Hub](https://www.electronicshub.org/mouse-grip-styles/)
 
 ## Forces
 
-Across the board, the *palm* grip appears to exert the lowest forces.
-While the *fingertip* and *claw* grips are similar, the *claw* grip
-exerts greater force on the mouse body compared to the *fingertip*,
-which should be expected given the fingertip grip’s lack of support on
-the back of the mouse. Perhaps surprisingly, the *claw* grip exerts
-higher side forces on the mouse, despite the additional palm support
-(and associated force) on the mouse body.
+Across the board, the forces exerted on the *palm* grip are low and
+relatively equal. While the *fingertip* and *claw* grips are similar,
+the *claw* grip exerts greater force on the mouse body compared to the
+*fingertip*, which should be expected given the fingertip grip’s lack of
+support on the back of the mouse. Perhaps surprisingly, the *claw* grip
+exerts higher side forces on the mouse, despite the additional palm
+support (and associated force) on the mouse body.
 
 These findings are most pronounced in the maximum forces, but hold true
 for the median forces (representing their typical force exertion) as
 well.
 
-![](./plots/all_mean_low.png) Average force measurements from the
-maximum and median values per trial.
+![](./plots/all_mean_low.png) Plots of average force measurements from
+the maximum and median values per trial.  
+Please note the right mouse button was not used as input during the
+Fitt’s tasks during which the data were collected.
 
-Here are the median forces (N):
+### Tables
+
+#### Median forces (N):
 
 | grip      | body | lclick | lside | rclick | rside |
 |:----------|-----:|-------:|------:|-------:|------:|
@@ -63,7 +71,7 @@ Here are the median forces (N):
 | claw      | 0.28 |   0.41 |  1.08 |   0.46 |  2.00 |
 | palm      | 0.51 |   0.43 |  0.60 |   0.32 |  0.60 |
 
-Here are the maximum forces (N):
+#### Maximum forces (N):
 
 | grip      | body | lclick | lside | rclick | rside |
 |:----------|-----:|-------:|------:|-------:|------:|
