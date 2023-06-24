@@ -4,7 +4,7 @@ Andrew Y.W. Wong
 
 **Have you ever thought about the way you hold your mouse?**  
 How about the forces needed to move your mouse, and how holding it
-differently affects how well you work your way around a computer?
+differently might affect how well you work your way around a computer?
 
 # Project Overview
 
