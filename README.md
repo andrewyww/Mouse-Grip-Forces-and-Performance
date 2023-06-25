@@ -42,6 +42,10 @@ Hub](https://www.electronicshub.org/mouse-grip-styles/)
 
 # Summary
 
+**TLDR: The *palm* grip gives a balance of good performance with low
+forces. At the cost of higher force exertion, the *claw* grip provides a
+slight improvement in performance.**
+
 ## Forces
 
 Across the board, the forces exerted on the *palm* grip are low and
