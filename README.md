@@ -121,6 +121,21 @@ research question:
 
 ## 1) Connecting force sensors to Arduino
 
+The force sensors (more appropriately referred to as force sensitive
+resistors, or FSRs) were wired to the Arduino with a bread board such
+that increasing force would increase the analog reading. A great hookup
+guide (and an excellent resource overall) to create the voltage divider
+that is the foundation for this behaviour can be located [here from the
+Makeability
+lab](https://makeabilitylab.github.io/physcomp/arduino/force-sensitive-resistors.html#using-fsrs-with-microcontrollers).
+Beyond the sensors, another decision that was made is the value of the
+fixed resistor used to create the voltage divider. A 10K Ohm resistor
+was selected for its good range across the sensing range of the FSR, as
+well as the sensitivity it offers at the lower end of force, where I
+expected the mouse grip forces to predominantly reside.
+
+![](https://makeabilitylab.github.io/physcomp/arduino/assets/images/Voltage-divider-circuit-Interlink-FSR-402-Makerguides.png)
+
 ![](./images/hookup.jpg)
 
 ## 2) Calibration
