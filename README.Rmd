@@ -129,11 +129,11 @@ I carried out the following steps in the process of answering the research quest
 
 ## 1) Connecting force sensors to Arduino
 
+![](./images/hookup.jpg)
+
 The force sensors (more appropriately referred to as force sensitive resistors, or FSRs) were wired to the Arduino with a bread board such that increasing force would increase the analog reading. A great hookup guide (and an excellent resource overall) to create the voltage divider that is the foundation for this behaviour can be located [here from the Makeability lab](https://makeabilitylab.github.io/physcomp/arduino/force-sensitive-resistors.html#using-fsrs-with-microcontrollers). Beyond the sensors, another decision that was made is the value of the fixed resistor used to create the voltage divider. A 10K Ohm resistor was selected for its good range across the sensing range of the FSR, as well as the sensitivity it offers at the lower end of force, where I expected the mouse grip forces to predominantly reside.
 
 ![](https://makeabilitylab.github.io/physcomp/arduino/assets/images/Voltage-divider-circuit-Interlink-FSR-402-Makerguides.png)
-
-![](./images/hookup.jpg)
 
 ## 2) Calibration
 The calibration step involved using a set of calibration masses to determine the analog value associated with a given mass. Analog values ranged from 0-1023 because the Arduino that was used possesses an analog to digital converter with a 10-bit resolution (2^10 = 1024). Due to the small physical dimensions of the sensors, only a limited number of calibration masses could be placed at once. A measurement was taken every 2 seconds over a 10 second window, so the average of 5 data points was taken as the analog measurement for a given mass. Linear interpolation was used to approximate mass when analog measurements fell between calibration values. Collected values were then converted to force, the main biomechanical outcome of interest. 
@@ -142,6 +142,8 @@ The calibration step involved using a set of calibration masses to determine the
 
 ## 3) Measuring forces
 Sensors were attached to a modified Logitech G703 mouse on the left side, left click, right click, right side, and body. The mouse was held using three grips (fingertip, claw, and palm) while performing Fitts point and click tasks across a range of difficulties. Data from the force sensors was collected with a sampling rate of 100 Hz.
+
+![](./images/instrumented_mouse.jpg)
 
 Plots were made by overlaying an image of the mouse with a shapefile, effectively creating a heat map of the forces exerted on the different sections of the mouse. Details will be provided in the mouse_shapefile folder.
 

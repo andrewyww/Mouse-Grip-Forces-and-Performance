@@ -121,6 +121,8 @@ research question:
 
 ## 1) Connecting force sensors to Arduino
 
+![](./images/hookup.jpg)
+
 The force sensors (more appropriately referred to as force sensitive
 resistors, or FSRs) were wired to the Arduino with a bread board such
 that increasing force would increase the analog reading. A great hookup
@@ -135,8 +137,6 @@ well as the sensitivity it offers at the lower end of force, where I
 expected the mouse grip forces to predominantly reside.
 
 ![](https://makeabilitylab.github.io/physcomp/arduino/assets/images/Voltage-divider-circuit-Interlink-FSR-402-Makerguides.png)
-
-![](./images/hookup.jpg)
 
 ## 2) Calibration
 
@@ -161,6 +161,8 @@ side, left click, right click, right side, and body. The mouse was held
 using three grips (fingertip, claw, and palm) while performing Fitts
 point and click tasks across a range of difficulties. Data from the
 force sensors was collected with a sampling rate of 100 Hz.
+
+![](./images/instrumented_mouse.jpg)
 
 Plots were made by overlaying an image of the mouse with a shapefile,
 effectively creating a heat map of the forces exerted on the different
